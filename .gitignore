@@ -1,1 +1,3 @@
 dist
+.vscode/
+builder/__pycache__/
