@@ -28,7 +28,8 @@ frames.mkdir()
 for n, site in enumerate(sites):
     prev = sites[(n - 1) % len(sites)]
     next = sites[(n + 1) % len(sites)]
-    with open(frames.joinpath(site["id"] + ".html"), "w", encoding="utf8") as f:
+    frames.joinpath(site["id"]).mkdir()
+    with open(frames.joinpath(site["id"], "index.html"), "w", encoding="utf8") as f:
         f.write(f"<!doctype html>")
         f.write(f"<title>Circle - {html.escape(site['id'])}</title>")
         f.write(f"<a id=all href=/ target=_parent>comfi.es Circle</a>")
