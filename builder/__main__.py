@@ -74,6 +74,11 @@ with open(dest.joinpath("index.html"), "x", encoding="utf8") as f:
 					<h1>frembs list</h1>
 					{sitelist}
 				</section>
+				<section>
+					<h1>how 2 join</h1>
+					<p>instructions are available in the README.md on the github page linke below</p>
+					<b>comfies/comfy <a href="https://github.com/comfies/circle">&RightArrow;</a></b>
+				</section>
 			</body>
 			"""
 		)
