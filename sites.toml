@@ -14,3 +14,4 @@
 [[sites]]
   id = "lllil.li"
   url = "https://lllil.li"
+  css = "https://lllil.li/static/css/webcircle.css"
