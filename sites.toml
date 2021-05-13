@@ -1,6 +1,7 @@
 [[sites]]
   id = "comfi.es"
   url = "https://comfi.es/"
+  css = "https://comfi.es/src/webcircle.css"
 
 [[sites]]
   id = "dystopia.club"
