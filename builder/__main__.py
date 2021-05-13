@@ -16,27 +16,27 @@ dest = args.destination
 
 
 with open(source, encoding="utf8") as f:
-	sites = tomlkit.parse(f.read())["sites"]
+    sites = tomlkit.parse(f.read())["sites"]
 
 
 if dest.exists():
-	shutil.rmtree(dest)
+    shutil.rmtree(dest)
 dest.mkdir()
 dest.joinpath("f").mkdir()
 
 for n, site in enumerate(sites):
-	prev = sites[(n - 1) % len(sites)]
-	next = sites[(n + 1) % len(sites)]
-	dest.joinpath("f", site["id"]).mkdir()
-	with open(dest.joinpath("f", site["id"], "index.html"), "x", encoding="utf8") as f:
-		# if custom embed css is provided get it
-		css = ""
-		if 'css' in site:
-			css = f'<link rel="stylesheet" href="{site["css"]}">'
+    prev = sites[(n - 1) % len(sites)]
+    next = sites[(n + 1) % len(sites)]
+    dest.joinpath("f", site["id"]).mkdir()
+    with open(dest.joinpath("f", site["id"], "index.html"), "x", encoding="utf8") as f:
+        # if custom embed css is provided get it
+        css = ""
+        if "css" in site:
+            css = f'<link rel="stylesheet" href="{site["css"]}">'
 
-		f.write(
-			dedent(
-				f"""\
+        f.write(
+            dedent(
+                f"""\
 				<!doctype html>
 				<title>Circle - {html.escape(site['id'])}</title>
 				{css}
@@ -44,17 +44,19 @@ for n, site in enumerate(sites):
 				<a id=prev href="{html.escape(prev['url'])}" target=_parent>Prev</a>
 				<a id=next href="{html.escape(next['url'])}" target=_parent>Next</a>
 				"""
-			)
-		)
+            )
+        )
 
 with open(dest.joinpath("index.html"), "x", encoding="utf8") as f:
-	sitelist = ''
-	for n, site in enumerate(sites):
-		sitelist += f'<b>{site["id"]} <a href="{site["url"]}">&RightArrow;</a></b><br>\n'
+    sitelist = ""
+    for n, site in enumerate(sites):
+        sitelist += (
+            f'<b>{site["id"]} <a href="{site["url"]}">&RightArrow;</a></b><br>\n'
+        )
 
-	f.write(
-		dedent(
-			f"""\
+    f.write(
+        dedent(
+            f"""\
 			<!DOCTYPE html>
 			<html lang="en">
 			<head>
@@ -81,28 +83,28 @@ with open(dest.joinpath("index.html"), "x", encoding="utf8") as f:
 				</section>
 			</body>
 			"""
-		)
-	)
+        )
+    )
 
 with open(dest.joinpath("404.html"), "x", encoding="utf8") as f:
-	f.write(
-		dedent(
-			f"""\
+    f.write(
+        dedent(
+            f"""\
 			<!doctype html>
 			<title>Circle - {html.escape(site['id'])}</title>
 			<h1><a id=all href=/ target=_parent>comfi.es Circle</a></h1>
 			<p><code>404</code> Page not found.
 			"""
-		)
-	)
+        )
+    )
 
 with open(dest.joinpath("f", "404.html"), "x", encoding="utf8") as f:
-	f.write(
-		dedent(
-			f"""\
+    f.write(
+        dedent(
+            f"""\
 			<!doctype html>
 			<title>Circle - {html.escape(site['id'])}</title>
 			<a id=all href=/ target=_parent>comfi.es Circle</a>
 			"""
-		)
-	)
+        )
+    )
