@@ -6,6 +6,7 @@
 [[sites]]
   id = "dystopia.club"
   url = "https://dystopia.club/"
+  css = "https://dystopia.club/circle.css"
 
 [[sites]]
   id = "zvava.org"
