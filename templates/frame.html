@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Circle - {{ site.id }}</title>
+{% if site.css %}
+<link rel=stylesheet href="{{ site.css }}">
+{% endif %}
+<a id=all href=/ target=_parent>comfi.es Circle</a>
+<a id=prev href="{{ prev.url }}" target=_parent>Prev</a>
+<a id=next href="{{ next.url }}" target=_parent>Next</a>

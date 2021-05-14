@@ -5,12 +5,15 @@ name = "pypi"
 
 [packages]
 tomlkit = "*"
+jinja2 = "*"
 
 [dev-packages]
 black = "*"
 
 [scripts]
-build = "python -m builder sites.toml dist"
+format = "black --line-length 118 ."
+build = "python -m builder --clobber sites.toml templates dist"
+clean = "rm dist"
 
 [requires]
 python_version = "3"
