@@ -1,5 +1,6 @@
 import argparse
 import html
+import re
 import pathlib
 import shutil
 from textwrap import dedent
@@ -43,7 +44,7 @@ if dest.exists():
 
 
 def copy_function(src, dst, *, follow_symlinks=True):
-    src = src.removeprefix(str(args.templates)).removeprefix("/")
+    src = re.sub(f'^({re.escape(str(args.templates))})/*', '', src, count=1)
     if src == "frame.html":
         return
     with open(dst, "w", encoding="utf8") as f:
