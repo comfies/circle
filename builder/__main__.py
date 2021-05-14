@@ -44,7 +44,7 @@ if dest.exists():
 
 
 def copy_function(src, dst, *, follow_symlinks=True):
-    src = re.sub(f'^({re.escape(str(args.templates))})/*', '', src, count=1)
+    src = re.sub(f"^({re.escape(str(args.templates))})/*", "", src, count=1)
     if src == "frame.html":
         return
     with open(dst, "w", encoding="utf8") as f:
