@@ -52,9 +52,66 @@ Or a heavily contrived example using a ***future*** JSON api, with fallback to i
     </script>
     <script type="module">
         (async function(){
-            const circle = await (await fetch('https://circle.comfi.es/json/example.com/')).json()
+            const circle = await (await fetch('https://circle.comfi.es/api/example.com.json')).json();
             /* Do stuff here */
         })();
     </script>
 </div>
+```
+
+## API Reference
+
+### `/api/list.json`
+Returns the full list of domain ids.
+```json
+[
+    "comfi.es",
+    "dystopia.club",
+    "zvava.org",
+    "lllil.li"
+    // etc...
+]
+```
+
+### `/api/sites.json`
+Returns the full list of site objects.
+```json
+[
+    { "id": "comfi.es", ... },
+    { "id": "dystopia.club", ... },
+    { "id": "zvava.org", ... },
+    { "id": "lllil.li", ... }
+    // etc...
+]
+```
+
+### `/api/domain.json`
+Returns info about a domain id.
+```json
+{
+    "id": "domain",                       // domain's id
+    "url": "https://domain/",             // domain's full url
+    "css": "https://domain/webcircle.css" // domain's css (if any)
+}
+```
+
+### `/api/f/domain.json`
+Returns the previous and next site objects in the circle along with some other info, useful for constructing custom embeds.
+```json
+{
+    "home": "https://circle.comfi.es/",    // home of webcircle
+    "css": "https://domain/webcircle.css", // domain's css (if any)
+    // previous website in the circle
+    "prev": {
+        "id": "prev-domain",
+        "url": "https://prev-domain/",
+        "css": "https://prev-domain/webcircle.css",
+    },
+    // next website in the circle
+    "next": {
+        "id": "next-domain",
+        "url": "https://next-domain/",
+        "css": "https://next-domain/webcircle.css",
+    }
+}
 ```
