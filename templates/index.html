@@ -1,13 +1,15 @@
+{% set title = "The /comfi.es/ webcircle" %}
+{% set desc = "A <a href="https://en.wikipedia.org/wiki/Webring" rel="external help noopener noreferrer nofollow">webring</a> of /comfi.es/ peeps and their projects!" %}
 <!doctype html>
 <html lang=en>
-<title>The /comfi.es/ webcircle</title>
+<title>{{ title }}</title>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<meta name=description content="A webring of /comfi.es/ members and their projects">
+<meta name=description content="{{ desc | striptags }}">
 <link rel="shortcut icon" href="https://comfi.es/src/img/comfies.ico">
 <link rel=stylesheet href="https://comfi.es/src/comfies.css">
 <section>
-	<h1>The /comfi.es/ webcircle</h1>
-	<p>A <a href="https://en.wikipedia.org/wiki/Webring" rel="external help noopener noreferrer nofollow">webring</a> of /comfi.es/ peeps and their projects!
+	<h1>{{ title }}</h1>
+	<p>{{ desc | safe }}
 </section>
 <section>
 	<h1>Sites</h1>
@@ -21,4 +23,3 @@
 	<h1>How 2 join</h1>
 	<p>instructions are available in the README.md in the <a href="https://github.com/comfies/circle" rel="external noopener noreferrer nofollow"><code>circle</code> repository</a>
 </section>
-
