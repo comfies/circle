@@ -6,3 +6,4 @@
 <a id=all href=/ target=_parent>comfi.es Circle</a>
 <a id=prev href="{{ prev.url }}" target=_parent>Prev</a>
 <a id=next href="{{ next.url }}" target=_parent>Next</a>
+<script>Window.parent.postMessage({{ {"prev":{"id":prev.id,"url":prev.url,},"next":{"id":next.id,"url":next.url,},}|tojson }},"*")</script>
