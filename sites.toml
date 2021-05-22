@@ -17,3 +17,8 @@
   id = "lllil.li"
   url = "https://lllil.li/"
   css = "https://lllil.li/static/css/webcircle.css"
+
+[[sites]]
+  id = "sweets.github.io"
+  url = "https://sweets.github.io/"
+  css = "https://sweets.github.io/circular.css"
