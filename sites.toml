@@ -19,6 +19,6 @@
   css = "https://lllil.li/static/css/webcircle.css"
 
 [[sites]]
-  id = "sweets.github.io"
-  url = "https://sweets.github.io/"
-  css = "https://sweets.github.io/circular.css"
+  id = "lost-in-walmart.blog"
+  url = "https://lost-in-walmart.blog/"
+  css = "https://lost-in-walmart.blog/circular.css"
