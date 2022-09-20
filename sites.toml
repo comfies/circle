@@ -9,11 +9,6 @@
   css = "https://dystopia.club/circle.css"
 
 [[sites]]
-  id = "zvava.org"
-  url = "https://zvava.org/"
-  css = "https://zvava.org/src/webcircle.css"
-
-[[sites]]
   id = "lllil.li"
   url = "https://lllil.li/"
   css = "https://lllil.li/static/css/webcircle.css"
