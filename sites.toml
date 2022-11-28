@@ -9,11 +9,6 @@
   css = "https://dystopia.club/circle.css"
 
 [[sites]]
-  id = "lllil.li"
-  url = "https://lllil.li/"
-  css = "https://lllil.li/static/css/webcircle.css"
-
-[[sites]]
   id = "lost-in-walmart.blog"
   url = "https://lost-in-walmart.blog/"
   css = "https://lost-in-walmart.blog/circular.css"
