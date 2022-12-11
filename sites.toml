@@ -12,3 +12,8 @@
   id = "lost-in-walmart.blog"
   url = "https://lost-in-walmart.blog/"
   css = "https://lost-in-walmart.blog/circular.css"
+  
+[[sites]]
+  id = "foreverliketh.is"
+  url = "https://foreverliketh.is/"
+  css = "https://comfi.es/src/webcircle.css"
